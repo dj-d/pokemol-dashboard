@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {Timeline, TimelineConnector, TimelineContent, TimelineDot, TimelineItem, TimelineSeparator} from '@material-ui/lab';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        <Timeline align="alternate">
+            <TimelineItem>
+                <TimelineSeparator>
+                    <TimelineDot />
+                    <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent>Eat</TimelineContent>
+            </TimelineItem>
+            <TimelineItem>
+                <TimelineSeparator>
+                    <TimelineDot />
+                    <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent>Code</TimelineContent>
+            </TimelineItem>
+            <TimelineItem>
+                <TimelineSeparator>
+                    <TimelineDot />
+                    <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent>Sleep</TimelineContent>
+            </TimelineItem>
+            <TimelineItem>
+                <TimelineSeparator>
+                    <TimelineDot />
+                </TimelineSeparator>
+                <TimelineContent>Repeat</TimelineContent>
+            </TimelineItem>
+        </Timeline>
     </div>
   );
 }
