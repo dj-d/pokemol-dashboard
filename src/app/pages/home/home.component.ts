@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
             }
         },
         legend: {
-            data: ['SquadraA', 'SquadraB', 'SquadraC']
+            data: ['Team A', 'Team B', 'Team C']
         },
         grid: {
             left: '3%',
@@ -35,11 +35,11 @@ export class HomeComponent implements OnInit {
         },
         yAxis: {
             type: 'category',
-            data: ['SquadraA', 'SquadraB', 'SquadraC']
+            data: ['Team A', 'Team B', 'Team C']
         },
         series: [
             {
-                name: 'Squadre',
+                name: 'Team',
                 type: 'bar',
                 data: [0, 0, 0]
             }
@@ -72,7 +72,7 @@ export class HomeComponent implements OnInit {
                     let schif = a as Array<any>;
                     this.aaaa = {
                         series: {
-                            name: 'Squadre',
+                            name: 'Team',
                             type: 'bar',
                             data: [schif[0].totalScore, schif[1].totalScore, schif[2].totalScore]
                         }
