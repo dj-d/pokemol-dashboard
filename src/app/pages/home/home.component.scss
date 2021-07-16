@@ -1,3 +1,13 @@
 #chart {
   width: 100vw;
 }
+
+.center-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.card h5{
+    margin: 0;
+}

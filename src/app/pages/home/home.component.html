@@ -1,4 +1,22 @@
 <div class="card">
-   <h5>Horizontal</h5>
-  <div echarts [options]="optionBar" [merge]="aaaa" id="chart"></div>
+    <div echarts [options]="optionBar" [merge]="aaaa" id="chart"></div>
+</div>
+
+<h1 style="text-align: center">Pokémons caught</h1>
+<div class="center-row">
+    <ng-container>
+        <div class="card">
+            <h5>Team A</h5>
+            {{sA}} / 150
+        </div>
+        <div class="card">
+            <h5>Team B</h5>
+            {{sB}} / 150
+        </div>
+
+        <div class="card">
+            <h5>Team C</h5>
+            {{sC}} / 150
+        </div>
+    </ng-container>
 </div>

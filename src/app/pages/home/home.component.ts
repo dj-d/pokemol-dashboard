@@ -48,11 +48,17 @@ export class HomeComponent implements OnInit {
 
     public aaaa: EChartsOption = {
         title: {
-            text: 'aaa',
+            text: 'Pokemol - Statistics',
         }
     };
+    public sA: number;
+    public sB: number;
+    public sC: number;
 
     constructor(private http: HttpClient) {
+        this.sA = 0;
+        this.sB = 0;
+        this.sC = 0;
     }
 
     ngOnInit() {
@@ -71,6 +77,10 @@ export class HomeComponent implements OnInit {
                             data: [schif[0].totalScore, schif[1].totalScore, schif[2].totalScore]
                         }
                     }
+
+                    this.sA = schif[0].captures.length;
+                    this.sB = schif[1].captures.length;
+                    this.sC = schif[2].captures.length;
                 })
         },1000);
     }
