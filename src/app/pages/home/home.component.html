@@ -8,15 +8,21 @@
         <div class="card">
             <h5>Team A</h5>
             {{sA}} / 152
+            <br><br>
+            <div *ngFor="let a of listA">{{a}}</div>
         </div>
         <div class="card">
             <h5>Team B</h5>
             {{sB}} / 152
+            <br><br>
+            <div *ngFor="let a of listB">{{a}}</div>
         </div>
 
         <div class="card">
             <h5>Team C</h5>
             {{sC}} / 152
+            <br><br>
+            <div *ngFor="let a of listC">{{a}}</div>
         </div>
     </ng-container>
 </div>

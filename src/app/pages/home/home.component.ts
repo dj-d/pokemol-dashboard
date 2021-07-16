@@ -55,10 +55,18 @@ export class HomeComponent implements OnInit {
     public sB: number;
     public sC: number;
 
+    public listA: Array<string>;
+    public listB: Array<string>;
+    public listC: Array<string>;
+
     constructor(private http: HttpClient) {
         this.sA = 0;
         this.sB = 0;
         this.sC = 0;
+
+        this.listA = [];
+        this.listB = [];
+        this.listC = [];
     }
 
     ngOnInit() {
@@ -81,6 +89,27 @@ export class HomeComponent implements OnInit {
                     this.sA = schif[0].captures.length;
                     this.sB = schif[1].captures.length;
                     this.sC = schif[2].captures.length;
+
+                    this.listA = [];
+                    const la = schif[0].captures.length -1;
+                    for (let i = schif[0].captures.length -1; i>=0; i--) {
+                        const a = schif[0].captures[i];
+                        this.listA.push(a.score + " - " + a.pokemon.name);
+                    }
+
+                    this.listB = [];
+                    const lb = schif[1].captures.length -1;
+                    for (let i = schif[1].captures.length -1; i>=0; i--) {
+                        const a = schif[1].captures[i];
+                        this.listB.push(a.score + " - " + a.pokemon.name);
+                    }
+
+                    this.listC = [];
+                    const lc = schif[2].captures.length -1;
+                    for (let i = schif[2].captures.length -1; i>=0; i--) {
+                        const a = schif[2].captures[i];
+                        this.listC.push(a.score + " - " + a.pokemon.name);
+                    }
                 })
         },1000);
     }
