@@ -86,7 +86,7 @@ export class HomeComponent implements OnInit {
                         series: {
                             name: 'Team',
                             type: 'bar',
-                            data: [schif[0].totalScore, schif[1].totalScore, schif[2].totalScore]
+                            data: [schif[0].totalScore, schif[1].totalScore, schif[2].totalScore, schif[3].totalScore]
                         }
                     }
 
