@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
             }
         },
         legend: {
-            data: ['Team A', 'Team B', 'Team C']
+            data: ['Team A', 'Team B', 'Team C', 'Team D']
         },
         grid: {
             left: '3%',
@@ -35,13 +35,13 @@ export class HomeComponent implements OnInit {
         },
         yAxis: {
             type: 'category',
-            data: ['Team A', 'Team B', 'Team C']
+            data: ['Team A', 'Team B', 'Team C', 'Team D']
         },
         series: [
             {
                 name: 'Team',
                 type: 'bar',
-                data: [0, 0, 0]
+                data: [0, 0, 0, 0]
             }
         ]
     };
@@ -54,19 +54,23 @@ export class HomeComponent implements OnInit {
     public sA: number;
     public sB: number;
     public sC: number;
+    public sD: number;
 
     public listA: Array<string>;
     public listB: Array<string>;
     public listC: Array<string>;
+    public listD: Array<string>;
 
     constructor(private http: HttpClient) {
         this.sA = 0;
         this.sB = 0;
         this.sC = 0;
+        this.sD = 0;
 
         this.listA = [];
         this.listB = [];
         this.listC = [];
+        this.listD = [];
     }
 
     ngOnInit() {
@@ -109,6 +113,13 @@ export class HomeComponent implements OnInit {
                     for (let i = schif[2].captures.length -1; i>=0; i--) {
                         const a = schif[2].captures[i];
                         this.listC.push(a.score + " - " + a.pokemon.name);
+                    }
+
+                    this.listD = [];
+                    const ld = schif[3].captures.length -1;
+                    for (let i = schif[3].captures.length -1; i>=0; i--) {
+                        const a = schif[3].captures[i];
+                        this.listD.push(a.score + " - " + a.pokemon.name);
                     }
                 })
         },1000);
