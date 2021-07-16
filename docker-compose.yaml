@@ -1,0 +1,19 @@
+version: '3'
+services:
+  pokemol-frontend:
+    container_name: pokemol-frontend
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file: .env
+    ports:
+      - "${PORT}:80"
+    volumes:
+      - .:/usr/src/app/
+    networks:
+      - pokemol-net
+
+networks:
+  pokemol-net:
+    driver: bridge
